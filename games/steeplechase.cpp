@@ -56,10 +56,11 @@ static CHIP_DESC( RANDOM_CLOCK_GEN ) =
 };
 
 
+static RomDesc c8_desc("steeplechase", "003774.C8", 0xf3785f4a); // Bugle ROM
  static RomDesc c4_desc("steeplechase", "003773-A.C4", 0x5DDC49B6); // Horse Video A
 static RomDesc d4_desc("steeplechase", "003773-B.D4", 0xE6994CDE); // Horse Video B
 
-//static RomDesc c8_desc("steeplechase", "003774.C8", 0xXXXXXXXX); // Bugle ROM - ROM DUMP MISSING
+//static RomDesc c8_desc("steeplechase", "003774.C8", 0xf3785f4a); // Bugle ROM
 //static RomDesc c4_desc("steeplechase", "003773-a.4c", 0x5DDC49B6); // Horse Video A
 //static RomDesc d4_desc("steeplechase", "003773-b.4d", 0xE6994CDE); // Horse Video B
 
