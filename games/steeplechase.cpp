@@ -123,6 +123,8 @@ CIRCUIT_LAYOUT( steeplechase )
     CHIP("C4", 74S287, &c4_desc)
     CHIP("C5", 74165)
     CHIP("C6", 7420)
+    CHIP("C7", 7493)
+    CHIP("C8", 82S123, &c8_desc)  // Unsure on ROM type
 
     CHIP("D1", 7400)
     CHIP("D2", 7404)
