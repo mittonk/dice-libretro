@@ -57,7 +57,7 @@ static CHIP_DESC( RANDOM_CLOCK_GEN ) =
 
 
 static RomDesc c8_desc("steeplechase", "003774.C8", 0xf3785f4a); // Bugle ROM
- static RomDesc c4_desc("steeplechase", "003773-A.C4", 0x5DDC49B6); // Horse Video A
+static RomDesc c4_desc("steeplechase", "003773-A.C4", 0x5DDC49B6); // Horse Video A
 static RomDesc d4_desc("steeplechase", "003773-B.D4", 0xE6994CDE); // Horse Video B
 
 //static RomDesc c8_desc("steeplechase", "003774.C8", 0xf3785f4a); // Bugle ROM
@@ -116,6 +116,8 @@ CIRCUIT_LAYOUT( steeplechase )
     CHIP("B3", 7420)
     CHIP("B4", 7408)
     CHIP("B7", 74107)
+    CHIP("B8", 9316)
+    // CHIP("B9", LM380)
 
     CHIP("C1", 74164)
     CHIP("C2", 7474)
@@ -125,6 +127,8 @@ CIRCUIT_LAYOUT( steeplechase )
     CHIP("C6", 7420)
     CHIP("C7", 7493)
     CHIP("C8", 82S123, &c8_desc)  // Unsure on ROM type
+    // C9
+    CHIP("C10", LM32A)
 
     CHIP("D1", 7400)
     CHIP("D2", 7404)
@@ -140,6 +144,8 @@ CIRCUIT_LAYOUT( steeplechase )
     CHIP("E4", 7402)
     CHIP("E5", 7474)
     CHIP("E6", 7402)
+    // E7
+    CHIP("E8", 7404)
 
     CHIP("F1", 9316)
     CHIP("F2", 7427)
@@ -1439,8 +1445,8 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION("VIDEO", Video::HBLANK_PIN, HSYNC)
     CONNECTION("VIDEO", Video::VBLANK_PIN, VSYNC)
 
-
-
+    //CONNECTION("AUDIO", 1, "C1", 6)
+    //CONNECTION("AUDIO", i1, "AUDIO", Audio::OUTPUT_MONO)
 
 
 #ifdef DEBUG
