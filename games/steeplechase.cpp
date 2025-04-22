@@ -137,6 +137,7 @@ CIRCUIT_LAYOUT( steeplechase )
     CHIP("D5", 74165)
     CHIP("D6", 7404)
     CHIP("D7", 7400)
+    CHIP("D8", 9316)
 
     CHIP("E1", 7474)
     CHIP("E2", 7474)
