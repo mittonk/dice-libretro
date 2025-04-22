@@ -2,7 +2,7 @@
 #include "../circuit.h"
 
 #define DEBUG
-#undef DEBUG
+//#undef DEBUG
 
 #ifdef DEBUG
 static VcdLogDesc vcd_log_desc
@@ -12,15 +12,15 @@ static VcdLogDesc vcd_log_desc
     2, "B",
     3, "C",
     4, "D",
-    5, "E",
+    5, "E_RESET",
     6, "F",
     7, "G",
     8, "H",
     9, "I",
-    10, "J",
+    10, "J_CLK",
     11, "K",
     12, "L",
-    13, "M",
+    13, "M_BUTTON1",
     14, "N",
     15, "O"
 );
@@ -128,7 +128,7 @@ CIRCUIT_LAYOUT( steeplechase )
     CHIP("C7", 7493)
     CHIP("C8", 82S123, &c8_desc)  // Unsure on ROM type
     // C9
-    CHIP("C10", LM32A)
+    // CHIP("C10", LM32A)
 
     CHIP("D1", 7400)
     CHIP("D2", 7404)
@@ -1463,6 +1463,7 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION(VSYNC, "LOG1", 10)
     CONNECTION(ATTRACT, "LOG1", 11)
     CONNECTION(ATTRACT_n, "LOG1", 12)
+    CONNECTION("JUMPSW1", 1, "LOG1", 13)
 
     //CONNECTION("RANDOM_CLOCK", 1, "LOG1", 1)
     //CONNECTION(RAND, "LOG1", 2)
