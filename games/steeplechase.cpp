@@ -21,8 +21,10 @@ static VcdLogDesc vcd_log_desc
     11, "K",
     12, "L",
     13, "M_BUTTON1",
-    14, "N",
-    15, "O"
+    14, "N_COUNT0",
+    15, "O_COUNT1",
+    16, "P_COUNT2",
+    17, "Q_COUNT3"
 );
 #endif
 
@@ -1446,6 +1448,12 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION("VIDEO", Video::HBLANK_PIN, HSYNC)
     CONNECTION("VIDEO", Video::VBLANK_PIN, VSYNC)
 
+    // Audio
+    CONNECTION(CLOCK, "C7", 14) // Test clock
+    CONNECTION("C7", 12, "C7", 1) // Counter loopback
+    // CONNECTION(VCC, "C7", 5)
+    // CONNECTION(GND, "C7", 10)
+
     //CONNECTION("AUDIO", 1, "C1", 6)
     //CONNECTION("AUDIO", i1, "AUDIO", Audio::OUTPUT_MONO)
 
@@ -1464,6 +1472,10 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION(ATTRACT, "LOG1", 11)
     CONNECTION(ATTRACT_n, "LOG1", 12)
     CONNECTION("JUMPSW1", 1, "LOG1", 13)
+    CONNECTION("C7", 12, "LOG1", 14) // COUNT0
+    CONNECTION("C7", 9, "LOG1", 15) // COUNT1
+    CONNECTION("C7", 8, "LOG1", 16) // COUNT2
+    CONNECTION("C7", 11, "LOG1", 17) // COUNT3
 
     //CONNECTION("RANDOM_CLOCK", 1, "LOG1", 1)
     //CONNECTION(RAND, "LOG1", 2)
