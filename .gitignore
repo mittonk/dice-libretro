@@ -6,3 +6,4 @@ dice
 dice_libretro.dylib
 dice_libretro.so
 dice_libretro.dll
+*.vcd

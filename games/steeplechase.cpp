@@ -22,9 +22,17 @@ static VcdLogDesc vcd_log_desc
     12, "L",
     13, "M_BUTTON1",
     14, "N_COUNT0",
-    15, "O_COUNT1",
-    16, "P_COUNT2",
-    17, "Q_COUNT3"
+    15, "N_COUNT1",
+    16, "N_COUNT2",
+    17, "N_COUNT3",
+    18, "R_BUG1",
+    19, "R_BUG2",
+    20, "R_BUG3",
+    21, "R_BUG4",
+    22, "R_BUG5",  // Not used?
+    23, "R_BUG6",
+    24, "R_BUG7",
+    25, "R_BUG8"
 );
 #endif
 
@@ -1454,6 +1462,14 @@ CIRCUIT_LAYOUT( steeplechase )
     // CONNECTION(VCC, "C7", 5)
     // CONNECTION(GND, "C7", 10)
 
+    CONNECTION("C7", 12, "C8", 10)
+    CONNECTION("C7", 9, "C8", 11)
+    CONNECTION("C7", 8, "C8", 12)
+    CONNECTION("C7", 11, "C8", 13)
+    CONNECTION(VCC, "C8", 14) // TODO: Note Inc instead.
+    CONNECTION(GND, "C8", 15)
+    CONNECTION(VCC, "C8", 16)
+
     //CONNECTION("AUDIO", 1, "C1", 6)
     //CONNECTION("AUDIO", i1, "AUDIO", Audio::OUTPUT_MONO)
 
@@ -1476,6 +1492,14 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION("C7", 9, "LOG1", 15) // COUNT1
     CONNECTION("C7", 8, "LOG1", 16) // COUNT2
     CONNECTION("C7", 11, "LOG1", 17) // COUNT3
+    CONNECTION("C8", 1, "LOG1", 18) // BUG1
+    CONNECTION("C8", 2, "LOG1", 19) // BUG2
+    CONNECTION("C8", 3, "LOG1", 20) // BUG3
+    CONNECTION("C8", 4, "LOG1", 21) // BUG4
+    CONNECTION("C8", 5, "LOG1", 22) // BUG5, unused?
+    CONNECTION("C8", 6, "LOG1", 23) // BUG6
+    CONNECTION("C8", 7, "LOG1", 24) // BUG7
+    CONNECTION("C8", 9, "LOG1", 25) // BUG8
 
     //CONNECTION("RANDOM_CLOCK", 1, "LOG1", 1)
     //CONNECTION(RAND, "LOG1", 2)
