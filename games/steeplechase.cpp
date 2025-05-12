@@ -1468,10 +1468,17 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION("C7", 11, "C8", 13)
     CONNECTION(VCC, "C8", 14) // TODO: Note Inc instead.
     CONNECTION(GND, "C8", 15)
-    CONNECTION(VCC, "C8", 16)
+    //CONNECTION(VCC, "C8", 16)
 
     //CONNECTION("AUDIO", 1, "C1", 6)
     //CONNECTION("AUDIO", i1, "AUDIO", Audio::OUTPUT_MONO)
+    CONNECTION("C8", 1, "D8", 3) // BUG1
+    CONNECTION("C8", 2, "D8", 4) // BUG2
+    CONNECTION("C8", 3, "D8", 5) // BUG3
+    CONNECTION(GND, "D8", 6)
+
+    CONNECTION("AUDIO", 1, "D8", 11)
+    CONNECTION("AUDIO", i1, "AUDIO", Audio::OUTPUT_MONO)
 
 
 #ifdef DEBUG
