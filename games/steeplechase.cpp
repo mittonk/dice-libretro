@@ -17,7 +17,7 @@ static VcdLogDesc vcd_log_desc
     7, "G",
     8, "H",
     9, "I",
-    10, "J_CLK",
+    10, "J_VSYNC",
     11, "K",
     12, "L",
     13, "M_BUTTON1",
@@ -32,7 +32,8 @@ static VcdLogDesc vcd_log_desc
     22, "R_BUG5",  // Not used?
     23, "R_BUG6",
     24, "R_BUG7",
-    25, "R_BUG8"
+    25, "R_BUG8",
+    26, "Z_CLOCK"
 );
 #endif
 
@@ -1457,7 +1458,7 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION("VIDEO", Video::VBLANK_PIN, VSYNC)
 
     // Audio
-    CONNECTION(CLOCK, "C7", 14) // Test clock
+    CONNECTION("JUMPSW1", 1, "C7", 14) // TODO: NOTE_INC et al
     CONNECTION("C7", 12, "C7", 1) // Counter loopback
     // CONNECTION(VCC, "C7", 5)
     // CONNECTION(GND, "C7", 10)
@@ -1466,9 +1467,10 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION("C7", 9, "C8", 11)
     CONNECTION("C7", 8, "C8", 12)
     CONNECTION("C7", 11, "C8", 13)
-    CONNECTION(VCC, "C8", 14) // TODO: Note Inc instead.
+    CONNECTION(GND, "C8", 14) // TODO: B7 instead
     CONNECTION(GND, "C8", 15)
     //CONNECTION(VCC, "C8", 16)
+
 
     //CONNECTION("AUDIO", 1, "C1", 6)
     //CONNECTION("AUDIO", i1, "AUDIO", Audio::OUTPUT_MONO)
@@ -1476,6 +1478,11 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION("C8", 2, "D8", 4) // BUG2
     CONNECTION("C8", 3, "D8", 5) // BUG3
     CONNECTION(GND, "D8", 6)
+    CONNECTION("D7", 8, "D8", 7)
+    CONNECTION("D7", 8, "D8", 10)
+
+    CONNECTION("D8", 15, "E8", 9)
+    CONNECTION("E8", 15, "D8", 9)
 
     CONNECTION("AUDIO", 1, "D8", 11)
     CONNECTION("AUDIO", i1, "AUDIO", Audio::OUTPUT_MONO)
@@ -1507,6 +1514,7 @@ CIRCUIT_LAYOUT( steeplechase )
     CONNECTION("C8", 6, "LOG1", 23) // BUG6
     CONNECTION("C8", 7, "LOG1", 24) // BUG7
     CONNECTION("C8", 9, "LOG1", 25) // BUG8
+    CONNECTION(CLOCK, "LOG1", 26) // CLOCK
 
     //CONNECTION("RANDOM_CLOCK", 1, "LOG1", 1)
     //CONNECTION(RAND, "LOG1", 2)
