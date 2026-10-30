@@ -31882,7 +31882,7 @@ struct retro_core_options_v2 options_val = {
 #define DICE_WHEEL_KEYJOY_SENSITIVITY_LABEL_VN "Đều khiển > Độ nhạy bánh xe"
 #define DICE_WHEEL_KEYJOY_SENSITIVITY_LABEL_CAT_VN "Độ nhạy bánh xe"
 #define DICE_WHEEL_KEYJOY_SENSITIVITY_INFO_0_VN "Độ nhạy khi sử dụng D-pad hoặc cần điều khiển tương tự để điều khiển cần điều khiển."
-#define DICE_THROTTLE_KEYJOY_SENSITIVITY_LABEL_VN "Đầu vào > Độ nhạy bướm ga"
+#define DICE_THROTTLE_KEYJOY_SENSITIVITY_LABEL_VN "Điều khiển > Độ nhạy bướm ga"
 #define DICE_THROTTLE_KEYJOY_SENSITIVITY_LABEL_CAT_VN "Độ nhạy bướm ga"
 #define DICE_THROTTLE_KEYJOY_SENSITIVITY_INFO_0_VN "Độ nhạy khi sử dụng D-pad hoặc cần điều khiển tương tự để điều khiển cần điều khiển."
 #define DICE_RETROMOUSE_PADDLE0_LABEL_VN "RetroMouse > Sử dụng chuột cho cần điều khiển 1"
